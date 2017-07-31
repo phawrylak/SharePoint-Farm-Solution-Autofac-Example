@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="194c0d8b-3761-4bc9-a6a4-12933a19401b" 
+        solutionId="194c0d8b-3761-4bc9-a6a4-12933a19401b" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="SharePointFarmSolutionAutofacExample"
+        sharePointProductVersion="15.0">
+</package>
