@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" 
-        Id="194c0d8b-3761-4bc9-a6a4-12933a19401b" 
-        solutionId="194c0d8b-3761-4bc9-a6a4-12933a19401b" 
-        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
-        name="SharePointFarmSolutionAutofacExample"
-        sharePointProductVersion="15.0">
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="194c0d8b-3761-4bc9-a6a4-12933a19401b" solutionId="194c0d8b-3761-4bc9-a6a4-12933a19401b" resetWebServer="false" sharePointProductVersion="15.0" name="SharePointFarmSolutionAutofacExample" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="fbafaf9b-4de3-48a8-b21f-14d4b2f38e74" />
+    <featureReference itemId="de98bcd4-6b39-48f8-a301-dc407987d3fb" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="0eddc54e-4da0-4701-ac1a-8b97cf1da1a0" />
+  </projectItems>
 </package>

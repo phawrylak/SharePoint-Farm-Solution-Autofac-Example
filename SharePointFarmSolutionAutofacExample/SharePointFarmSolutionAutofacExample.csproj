@@ -40,20 +40,56 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Web-ContainerProviderAccessorOverride.4.0.0\lib\net45\Autofac.Integration.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutofacContainerProviderAccessor.cs" />
+    <Compile Include="EventReceivers\ExampleEventReceiver\ExampleEventReceiver.cs" />
+    <Compile Include="Features\WebApplication\WebApplication.EventReceiver.cs">
+      <DependentUpon>WebApplication.feature</DependentUpon>
+    </Compile>
+    <Compile Include="HttpModules\AutofacContainerDisposalModule.cs" />
+    <Compile Include="HttpModules\AutofacPropertyInjectionModule.cs" />
+    <Compile Include="Layouts\SharePointFarmSolutionAutofacExample\ExamplePage.aspx.cs">
+      <DependentUpon>ExamplePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\SharePointFarmSolutionAutofacExample\ExamplePage.aspx.designer.cs">
+      <DependentUpon>ExamplePage.aspx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimerJobs\ExampleTimerJob.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="EventReceivers\ExampleEventReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dc52efac-f8a7-4362-899a-9a369a1c7291}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\WebApplication\WebApplication.feature">
+      <FeatureId>{de98bcd4-6b39-48f8-a301-dc407987d3fb}</FeatureId>
+    </None>
+    <None Include="Features\Web\Web.feature">
+      <FeatureId>{fbafaf9b-4de3-48a8-b21f-14d4b2f38e74}</FeatureId>
+    </None>
     <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0eddc54e-4da0-4701-ac1a-8b97cf1da1a0}</SharePointProjectItemId>
+    </None>
+    <None Include="packages.config" />
     <None Include="Package\Package.package">
       <PackageId>{194c0d8b-3761-4bc9-a6a4-12933a19401b}</PackageId>
     </None>
@@ -61,8 +97,16 @@
       <DependentUpon>Package.package</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Features\" />
+    <Content Include="EventReceivers\ExampleEventReceiver\Elements.xml" />
+    <Content Include="Features\WebApplication\WebApplication.Template.xml">
+      <DependentUpon>WebApplication.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Web\Web.Template.xml">
+      <DependentUpon>Web.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\SharePointFarmSolutionAutofacExample\ExamplePage.aspx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
